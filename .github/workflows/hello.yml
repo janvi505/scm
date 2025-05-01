@@ -1,17 +1,11 @@
-name: HelloWorkflow
+name: Add Hello World Github Action
 
 on: [push]
 
 jobs:
-  say_hello:
+  hello:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-      - name: Say hello
-        run: |
-          python hello.py
+    - uses: actions/checkout@v4
+    - name: Say Hello
+      run: echo "Hello, World!"
